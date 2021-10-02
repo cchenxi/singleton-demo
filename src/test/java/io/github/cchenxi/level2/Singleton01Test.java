@@ -54,7 +54,7 @@ public class Singleton01Test {
             System.out.printf("%s 正在等待\n", Thread.currentThread().getName());
             // 模拟，等待所有线程都到达
             cyclicBarrier.await();
-            return Singleton.getInstance();
+            return Singleton01.getInstance();
         }
     }
 }

@@ -14,13 +14,12 @@ import java.util.concurrent.Future;
 import static org.junit.Assert.*;
 
 /**
- * 测试 懒汉式单例
+ * 测试懒汉式线程不安全的单例
  * Date: 2021-10-02
  *
  * @author chenxi
  */
-public class SingletonTest {
-
+public class Singleton02Test {
     @SneakyThrows
     @Test
     public void can_new_multi_instance() {
@@ -29,7 +28,7 @@ public class SingletonTest {
 
         Future[] futures = new Future[2];
         for (int i = 0; i < 2; i++) {
-            Future future = executorService.submit(new Task(cyclicBarrier));
+            Future future = executorService.submit(new Singleton02Test.Task(cyclicBarrier));
             futures[i] = future;
         }
 
@@ -55,7 +54,7 @@ public class SingletonTest {
             System.out.printf("%s 正在等待\n", Thread.currentThread().getName());
             // 模拟，等待所有线程都到达
             cyclicBarrier.await();
-            return Singleton.getInstance();
+            return Singleton02.getInstance();
         }
     }
 }
