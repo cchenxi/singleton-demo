@@ -2,6 +2,7 @@ package io.github.cchenxi.level2;
 
 /**
  * 单例，懒汉式
+ * 线程不安全
  * Date: 2021-10-02
  *
  * @author chenxi
