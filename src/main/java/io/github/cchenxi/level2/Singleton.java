@@ -8,7 +8,6 @@ package io.github.cchenxi.level2;
  * @author chenxi
  */
 public class Singleton {
-
     private static Singleton singleton;
 
     private Singleton() {}

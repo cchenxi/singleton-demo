@@ -14,22 +14,21 @@ import java.util.concurrent.Future;
 import static org.junit.Assert.*;
 
 /**
- * 测试 懒汉式单例
+ * 测试，懒汉式线程安全的单例
  * Date: 2021-10-02
  *
  * @author chenxi
  */
-public class SingletonTest {
-
+public class Singleton01Test {
     @SneakyThrows
     @Test
-    public void should_new_multi_instance() {
+    public void should_new_one_instance() {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(2);
         ExecutorService executorService = Executors.newFixedThreadPool(2);
 
         Future[] futures = new Future[2];
         for (int i = 0; i < 2; i++) {
-            Future future = executorService.submit(new Task(cyclicBarrier));
+            Future future = executorService.submit(new Singleton01Test.Task(cyclicBarrier));
             futures[i] = future;
         }
 
@@ -39,7 +38,7 @@ public class SingletonTest {
         System.out.println("object 2 = " + o2);
 
         boolean instanceEquals = Objects.equals(o1, o2);
-        Assert.assertNotEquals(true, instanceEquals);
+        Assert.assertEquals(true, instanceEquals);
     }
 
     static class Task implements Callable {
