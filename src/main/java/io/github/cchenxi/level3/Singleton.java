@@ -10,7 +10,6 @@ public class Singleton {
     private static volatile Singleton singleton;
 
     private Singleton() {
-        System.out.println("init");
     }
 
     public static Singleton getInstance() {

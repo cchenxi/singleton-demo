@@ -1,4 +1,4 @@
-package io.github.cchenxi.level3;
+package io.github.cchenxi.level4;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
@@ -11,6 +11,8 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+
+import static org.junit.Assert.*;
 
 /**
  * Test case for {@link Singleton}.
@@ -49,7 +51,7 @@ public class SingletonTest {
 
         @SneakyThrows
         @Override
-        public Object call() {
+        public Object call() throws Exception {
             System.out.printf("%s 正在等待\n", Thread.currentThread().getName());
             // 模拟，等待所有线程都到达
             cyclicBarrier.await();
