@@ -1,4 +1,4 @@
-package io.github.cchenxi.level03;
+package io.github.cchenxi.level3;
 
 import lombok.SneakyThrows;
 import org.junit.Assert;
@@ -10,8 +10,6 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-
-import static org.junit.Assert.*;
 
 /**
  * Test case for {@link Singleton}.

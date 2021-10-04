@@ -1,4 +1,4 @@
-package io.github.cchenxi.level03;
+package io.github.cchenxi.level3;
 
 /**
  * 单例，双重检查
