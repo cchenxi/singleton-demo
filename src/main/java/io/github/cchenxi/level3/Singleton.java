@@ -7,20 +7,19 @@ package io.github.cchenxi.level3;
  * @author chenxi
  */
 public class Singleton {
-    private static volatile Singleton singleton;
+    private static volatile Singleton instance;
 
     private Singleton() {
     }
 
     public static Singleton getInstance() {
-        if (singleton == null) {
+        if (instance == null) {
             synchronized (Singleton.class) {
-                if (singleton == null) {
-                    singleton = new Singleton();
+                if (instance == null) {
+                    instance = new Singleton();
                 }
             }
         }
-
-        return singleton;
+        return instance;
     }
 }

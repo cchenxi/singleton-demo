@@ -10,14 +10,14 @@ package io.github.cchenxi.level2;
  * @author chenxi
  */
 public class Singleton {
-    private static Singleton singleton;
+    private static Singleton instance;
 
     private Singleton() {}
 
     public static Singleton getInstance() {
-        if (singleton == null) {
-            singleton = new Singleton();
+        if (instance == null) {
+            instance = new Singleton();
         }
-        return singleton;
+        return instance;
     }
 }

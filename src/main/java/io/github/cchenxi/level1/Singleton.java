@@ -7,17 +7,13 @@ package io.github.cchenxi.level1;
  * @author chenxi
  */
 public class Singleton {
+    private static final Singleton INSTANCE = new Singleton();
 
-    private static Singleton singleton = new Singleton();
-
-    private Singleton(){}
-
-    public static Singleton getInstance(){
-        return singleton;
+    private Singleton() {
     }
 
-    public static void main(String[] args) {
-        Singleton singleton = Singleton.getInstance();
+    public static Singleton getInstance() {
+        return INSTANCE;
     }
 }
 

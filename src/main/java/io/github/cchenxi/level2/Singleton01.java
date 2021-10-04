@@ -8,14 +8,14 @@ package io.github.cchenxi.level2;
  * @author chenxi
  */
 public class Singleton01 {
-    private static Singleton01 singleton;
+    private static Singleton01 instance;
 
     private Singleton01() {}
 
     public static synchronized Singleton01 getInstance() {
-        if (singleton == null) {
-            singleton = new Singleton01();
+        if (instance == null) {
+            instance = new Singleton01();
         }
-        return singleton;
+        return instance;
     }
 }

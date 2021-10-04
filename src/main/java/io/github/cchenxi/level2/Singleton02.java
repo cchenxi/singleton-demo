@@ -10,19 +10,17 @@ package io.github.cchenxi.level2;
  * @author chenxi
  */
 public class Singleton02 {
-
-    private static Singleton02 singleton;
+    private static Singleton02 instance;
 
     private Singleton02() {}
 
     public static Singleton02 getInstance() {
         // 多线程同时通过了if判断，会产生多个实例
-        if (singleton == null) {
+        if (instance == null) {
             synchronized (Singleton.class) {
-                singleton = new Singleton02();
+                instance = new Singleton02();
             }
         }
-        return singleton;
+        return instance;
     }
 }
-
