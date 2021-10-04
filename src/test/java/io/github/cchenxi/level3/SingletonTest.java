@@ -36,7 +36,7 @@ public class SingletonTest {
         System.out.println("object 2 = " + o2);
 
         boolean instanceEquals = Objects.equals(o1, o2);
-        Assert.assertEquals(true, instanceEquals);
+        Assert.assertTrue(instanceEquals);
     }
 
     static class Task implements Callable {
