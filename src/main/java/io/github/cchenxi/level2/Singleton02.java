@@ -16,6 +16,7 @@ public class Singleton02 {
     private Singleton02() {}
 
     public static Singleton02 getInstance() {
+        // 多线程同时通过了if判断，会产生多个实例
         if (singleton == null) {
             synchronized (Singleton.class) {
                 singleton = new Singleton02();
